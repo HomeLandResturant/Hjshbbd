@@ -1,50 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Trozie - AI Services</title>
   <style>
     body {
-      background-color: black;
-      height: 2000px;
+      background-color: #1A1333;
+      color: #FFFFFF;
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      font-weight: bold;
+      margin-top: 100px;
+    }
+    
+    h2 {
+      font-size: 36px;
+      margin-top: 50px;
+    }
+    
+    .services {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      margin-top: 50px;
     }
-
-    .dancer {
-      position: fixed;
-      width: 200px;
-      height: 200px;
-      background-image: url('images/rams_guy.png');
-      background-size: cover;
-      animation: dance 1s infinite alternate;
+    
+    .column {
+      margin: 0 30px;
     }
-
-    @keyframes dance {
-      0% {
-        transform: rotate(0deg);
-      }
-      50% {
-        transform: rotate(10deg);
-      }
-      100% {
-        transform: rotate(0deg);
-      }
+    
+    .button {
+      display: inline-block;
+      background-color: #8042C2;
+      color: #FFFFFF;
+      font-size: 24px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    
+    .button:hover {
+      background-color: #C38DEE;
+    }
+    
+    .contact {
+      text-align: center;
+      margin-top: 50px;
     }
   </style>
 </head>
 <body>
-  <script>
-    function createDancers() {
-      var body = document.getElementsByTagName("body")[0];
-
-      for (var i = 0; i < 10; i++) {
-        var dancer = document.createElement("div");
-        dancer.className = "dancer";
-        body.appendChild(dancer);
-      }
-    }
-
-    createDancers();
-  </script>
+  <h1>Trozie</h1>
+  <h2>SERVICES</h2>
+  <div class="services">
+    <div class="column">
+      <h3>SUHQ KEYWORDS</h3>
+      <p>The best keywords for anything from dorking to YouTube and more. SEO optimized with great results.</p>
+    </div>
+    <div class="column">
+      <h3>YOUR PARSED LINKS CHECKER</h3>
+      <p>Parsed your links? Can't check vulnerabilities or get good results? Just hit me up, and I'll do it for a cheap price.</p>
+    </div>
+  </div>
+  
+  <h2>TELEGRAM</h2>
+  <a class="button" href="https://t.me/tr0zie">Join Trozie on Telegram</a>
+  
+  <h2>DISCORD</h2>
+  <p class="contact">Trozie#0994</p>
 </body>
 </html>
