@@ -3,19 +3,22 @@
 <head>
   <style>
     body {
-      background-size: cover;
-      background-repeat: no-repeat;
+      background-color: black;
+      height: 2000px; /* Set a larger height to enable scrolling */
     }
 
     #dancer {
-      position: relative;
+      position: fixed; /* Keeps the dancer fixed on the screen */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 200px;
       height: 200px;
-      background-image: url('path/to/your/rams_guy.png');
+      background-image: url('images/rams_guy.png');
       background-size: cover;
       animation: dance 1s infinite alternate;
     }
-    
+
     @keyframes dance {
       0% {
         transform: rotate(0deg);
@@ -33,7 +36,12 @@
   <div id="dancer"></div>
 
   <script>
-    // JavaScript code can be added here if needed
+    window.addEventListener("scroll", function() {
+      var dancer = document.getElementById("dancer");
+      var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+
+      dancer.style.animationPlayState = (scrollPos > 0) ? "paused" : "running";
+    });
   </script>
 </body>
 </html>
