@@ -4,14 +4,11 @@
   <style>
     body {
       background-color: black;
-      height: 2000px; /* Set a larger height to enable scrolling */
+      height: 2000px;
     }
 
-    #dancer {
-      position: fixed; /* Keeps the dancer fixed on the screen */
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    .dancer {
+      position: fixed;
       width: 200px;
       height: 200px;
       background-image: url('images/rams_guy.png');
@@ -33,15 +30,18 @@
   </style>
 </head>
 <body>
-  <div id="dancer"></div>
-
   <script>
-    window.addEventListener("scroll", function() {
-      var dancer = document.getElementById("dancer");
-      var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    function createDancers() {
+      var body = document.getElementsByTagName("body")[0];
 
-      dancer.style.animationPlayState = (scrollPos > 0) ? "paused" : "running";
-    });
+      for (var i = 0; i < 10; i++) {
+        var dancer = document.createElement("div");
+        dancer.className = "dancer";
+        body.appendChild(dancer);
+      }
+    }
+
+    createDancers();
   </script>
 </body>
 </html>
